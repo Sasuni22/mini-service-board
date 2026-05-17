@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sidebar-width: 240px;
+  --topbar-height: 64px;
+  --blue-primary: #2353E8;
+  --blue-dark: #1a3cc4;
+  --blue-light: #EEF2FF;
+  --surface: #F1F3F9;
+  --border: #E4E8EF;
+  --text-primary: #0F172A;
+  --text-secondary: #64748B;
+  --text-muted: #94A3B8;
+  --white: #FFFFFF;
+  --green: #16A34A;
+  --green-light: #DCFCE7;
+  --amber: #D97706;
+  --amber-light: #FEF3C7;
+  --red: #DC2626;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #F1F3F9;
+  color: #0F172A;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 99px; }
+
+@layer components {
+  .field-label {
+    @apply block text-[11px] font-semibold uppercase tracking-widest text-slate-500 mb-1.5;
+  }
+  .field-input {
+    @apply w-full rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-800
+           placeholder-slate-400 outline-none transition-all
+           focus:border-blue-500 focus:ring-2 focus:ring-blue-500/15;
+  }
+  .field-input-error {
+    @apply !border-red-400 focus:!border-red-500 focus:!ring-red-200;
+  }
+  .btn-blue {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-[#2353E8] px-5 py-2.5
+           text-sm font-semibold text-white transition-all
+           hover:bg-[#1a3cc4] active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white
+           px-5 py-2.5 text-sm font-semibold text-slate-700 transition-all
+           hover:bg-slate-50 active:scale-[0.98];
+  }
+  .btn-danger-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border-2 border-dashed border-red-400
+           bg-white px-4 py-2.5 text-sm font-semibold text-red-600 transition-all
+           hover:bg-red-50 active:scale-[0.98];
+  }
+  .btn-danger-solid {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-red-600 px-5 py-2.5
+           text-sm font-semibold text-white transition-all
+           hover:bg-red-700 active:scale-[0.98] disabled:opacity-60;
+  }
+  .card {
+    @apply rounded-xl border border-slate-200 bg-white;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.35s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .animate-slide-in {
+    animation: slideIn 0.25s ease both;
+  }
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(12px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+}
