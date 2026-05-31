@@ -2,7 +2,7 @@
 
 A full-stack web app where homeowners post service requests and tradespeople manage them.
 
-Built with **Next.js 14**, **Express**, and **MongoDB** 
+Built with **Next.js 14**, **Express** and **MongoDB** 
 
 ---
 
