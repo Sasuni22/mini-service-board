@@ -1,4 +1,4 @@
-# ServiceBoard — Mini Service Request Board
+# ServiceBoard - Mini Service Request Board
 
 A full-stack web app where homeowners post service requests and tradespeople manage them.
 
